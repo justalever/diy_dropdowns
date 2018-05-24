@@ -1,0 +1,27 @@
+/* Breakpoints */
+$cap: 1420px;
+$ml: 970px;
+$m: 850px;
+$s: 740px;
+$xs: 500px;
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (max-width: $cap) { @content; }
+  }
+   @else if $point == mediumlarge {
+    @media (max-width: $ml) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: $m) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: $s)  { @content; }
+  }
+  @else if $point == extrasmall {
+    @media (max-width: $xs)  { @content; }
+  }
+  @else if $point == mega {
+    @media screen and (min-width: $cap) { @content; }
+  }
+}

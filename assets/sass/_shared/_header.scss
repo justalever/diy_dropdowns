@@ -1,0 +1,249 @@
+$header-link-size: 13px;
+$header-dark-link-color: #bbbcbf;
+$header-dark-background-color: #1b1e26;
+$header-light-link-color: $primary-color;
+$header-light-background-color: #ffffff;
+
+.header {
+  background: white;
+  line-height: 50px;
+  min-height: 50px;
+  padding: 0 50px;
+
+  @include breakpoint(medium) {
+    line-height: 48px;
+    min-height: 48px;
+    padding: 0 10px;
+  }
+}
+
+.primary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @include breakpoint(medium) {
+    flex-direction: column
+  }
+
+  &.nav-start {
+    justify-content: flex-start;
+    width: 50%;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+  }
+
+  &.nav-end {
+    flex: 1;
+    justify-content: flex-end;
+    width: 50%;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+  }
+}
+
+.nav-brand {
+  position: relative;
+  top: 12px;
+
+  @include breakpoint(medium) { top: 8px; }
+
+  #logo {
+    fill: $header-dark-link-color;
+
+    &:hover, &:focus {
+      fill: white;
+    }
+  }
+}
+
+.nav-brand-toggle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 5%;
+
+  @include breakpoint(medium) {
+    width: 100%;
+
+    .nav-toggle {
+      background: none;
+      border: 0;
+      display: block;
+    }
+  }
+}
+
+.nav-item {
+  font-size: $header-link-size;
+  font-weight: 500;
+  margin: 0 6px;
+  padding: 0 10px;
+  text-decoration: none;
+  @include breakpoint(medium) {
+    margin: 8px 0;
+  }
+}
+
+.nav-collapse {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+
+  @include breakpoint(medium) {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &.show {
+    display: flex;
+  }
+}
+
+.nav-avatar {
+  background-position: center center;
+  background-size: 42px 42px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  margin-left: 10px;
+  margin: 0 auto;
+  transition: all ease .3s;
+  width: 32px;
+
+  @include breakpoint(medium) {
+    margin: 0 auto 10px auto;
+  }
+
+  &:hover, &:focus {
+    border-color: $primary-color;
+    opacity: .9;
+  }
+}
+
+.dropdown { position: relative; }
+
+.dropdown-menu {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 0 1px 3px 0 rgba(black, .2);
+  font-size: $header-link-size;
+  list-style: none;
+  margin: 0 0 0 5px;
+  min-width: 180px;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  top: 44px;
+  z-index: 99;
+
+  @include breakpoint(medium) {
+    margin: 0;
+    position: static;
+    text-align: center;
+    width: 100%;
+  }
+
+  &.dropdown-right { right: 0; }
+
+  &.dropdown-account { top: 40px; }
+}
+
+.dropdown-item {
+  font-size: $header-link-size;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  padding: 3px 0;
+  text-align: left;
+
+  @include breakpoint(medium) {
+    margin: 8px 0;
+    text-align: center;
+  }
+  a {
+    dispay: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 16px;
+    text-decoration: none;
+  }
+}
+
+/*
+* Light Theme
+======================================================*/
+.header-light {
+  background-color: white;
+
+  .nav-item { color: $header-light-link-color; }
+
+  .nav-brand #logo {
+    fill: $primary-color;
+    &:hover, &:focus {
+      fill: rgba($primary-color, .8);
+    }
+  }
+
+  .dropdown-menu { background-color: white; }
+
+  .dropdown-item {
+    color: $primary-color;
+    transition: ease .3s background-color;
+
+
+    &:hover, &:focus {
+      background-color: rgba($primary-color, .5);
+    }
+  }
+
+  .btn { &:hover { background: rgba($primary-color, .1); } }
+}
+
+/*
+* Dark Theme
+======================================================*/
+.header-dark {
+  background: $header-dark-background-color;
+
+  .nav { a, .btn { color: $header-dark-link-color; } }
+
+  .nav-toggle svg { fill: $header-dark-link-color; }
+
+  .dropdown-menu {
+    background: white;
+    box-shadow: 0 1px 3px 0 rgba(black, .1);
+  }
+
+  .dropdown-item {
+    color: $primary-color;
+    transition: ease .3s background-color;
+
+    &:hover, &:focus {
+      background-color: rgba($primary-color, .1);
+    }
+
+    a { color: $header-dark-background-color; }
+  }
+
+  .btn { &:hover { background: rgba(black, .5); } }
+}

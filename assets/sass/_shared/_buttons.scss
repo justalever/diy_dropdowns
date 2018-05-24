@@ -1,0 +1,47 @@
+.btn {
+  align-items: center;
+  background: transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: white;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500px;
+  height: 50px;
+  justify-content: center;
+  padding: 0 30px;
+  position: relative;
+  text-decoration: none;
+  transition: linear 0.2s;
+  -webkit-appearance: none;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    filter: brightness(120%);
+  }
+  @include breakpoint(medium) {
+    display: flex;
+  }
+}
+
+.btn-xs { height: 30px; padding: 0 20px; font-size: 13px; }
+.btn-sm { height: 40px; }
+.btn-md { height: 50px; }
+.btn-lg { height: 70px; padding: 0 50px; font-size: 16px; }
+
+
+.btn-dropdown {
+  position: relative;
+  padding-right: 30px !important;
+
+  &:after {
+    content: "";
+    background-image: url('../assets/images/dropdown-arrow.svg');
+    position: absolute;
+    right: 10px;
+    width: 10px;
+    height: 4px;
+    top: 50%;
+    margin-top: -2px;
+  }
+}
