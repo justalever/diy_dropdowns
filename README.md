@@ -15,11 +15,15 @@ Requirements include:
 
 Be sure to initialize your project after installing yarn:
 
-```yarn init```
+```bash
+yarn init
+```
 
 Here's my `yarn` script of which includes all the plugins we use for Gulp.
 
-```yarn add gulp gulp-sass gulp-autoprefixer gulp-imagemin gulp-concat gulp-uglify gulp-watch gulp-sourcemaps gulp-connect --dev```
+```bash
+yarn add gulp gulp-sass gulp-autoprefixer gulp-imagemin gulp-concat gulp-uglify gulp-watch gulp-sourcemaps gulp-connect --dev
+```
 
 You can find my `Gulpfile.js` in the repo [here](https://github.com/justalever/diy_dropdowns/blob/master/Gulpfile.js).
 
